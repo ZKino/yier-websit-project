@@ -4,6 +4,9 @@ $color_666666: #666666;
 $color_999999: #999999;
 $color_474652: #474652;
 $color_D9D9D9: #D9D9D9;
+$color_DBDBDB: #DBDBDB;
+$color_f5f5f5: #f5f5f5;
+$color_c5c5c5: #C5C5C5;
 $color_0A84FF: #0A84FF;
 $color_ffffff: #ffffff;
 
@@ -14,13 +17,15 @@ $font_size_22: 22px;
 $font_size_28: 28px;
 $font_size_34: 34px;
 $font_size_40: 40px;
+$font_size_56: 56px;
+$font_size_64: 64px;
 
 // 非首页的banner
 .banner {
   width: 100%;
-  background-color: $color_0A84FF;
   img {
     width: 100%;
     height: auto;
+    vertical-align: bottom;
   }
 }

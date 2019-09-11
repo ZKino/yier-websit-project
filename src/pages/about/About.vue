@@ -53,7 +53,40 @@
       </Increment>
     </div>
 
-    <Subtitle title="服务流程" sub_title="凭借多年的项目经验，与客户一起沟通，从客户的角度发现问题，找到良好解决方案。" />
+    <!--    服务流程-->
+    <Subtitle title="服务流程" sub_title="凭借多年的项目经验，与客户一起沟通，从客户的角度发现问题，找到良好解决方案。" class="service-process-title"/>
+    <div class="service-process">
+      <div class="service-process-wrap flex w1200">
+        <div class="service-process-wrap-left">
+          <ul class="flex">
+            <li
+              class="flex"
+              @mouseenter="mouseenterHandler(i)"
+              v-for="(v, i) in serviceProcessData.leftList" :key="v.num">
+              <img :src="v.icon" alt="">
+              <span class="num">{{ v.num }}</span>
+              <span class="title">{{ v.title }}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="service-process-wrap-right">{{ serviceProcessData.rightList }}</div>
+      </div>
+    </div>
+
+    <!--    专业保障-->
+    <Subtitle title="专业保障 售后无忧" sub_title="坚持4项原则是忆尔的生命线"/>
+    <div class="guarantee">
+      <div class="guarantee-wrap flex w1200">
+        <div
+          class="guarantee-wrap-item"
+          v-for="(v, i) in guaranteeData" :key="v.num">
+          <p>{{ v.en_title }}</p>
+          <p>{{ v.cn_title }}</p>
+          <p>{{ v.num }}</p>
+          <p><img :src="v.icon" alt=""></p>
+        </div>
+      </div>
+    </div>
 
   </div>
 </template>
@@ -78,12 +111,95 @@
             {start_num: 3, end_num: 26, desc: '行业经验'},
             {start_num: 4, end_num: 1000, desc: '客户选择'}
           ]
-        }
+        },
+        serviceProcessData: {
+          leftList: [
+            {
+              num: '01',
+              icon: require('../../assets/imgs/service_process_1.png'),
+              title: '需求收集',
+              desc: '描述'
+            },
+            {
+              num: '02',
+              icon: require('../../assets/imgs/service_process_2.png'),
+              title: '项目报价',
+              desc: '描述'
+            },
+            {
+              num: '03',
+              icon: require('../../assets/imgs/service_process_3.png'),
+              title: '项目立项',
+              desc: '描述'
+            },
+            {
+              num: '04',
+              icon: require('../../assets/imgs/service_process_4.png'),
+              title: '创意设计',
+              desc: '描述'
+            },
+            {
+              num: '05',
+              icon: require('../../assets/imgs/service_process_5.png'),
+              title: '程序开发',
+              desc: '描述'
+            },
+            {
+              num: '06',
+              icon: require('../../assets/imgs/service_process_6.png'),
+              title: '客户审核'
+            },
+            {
+              num: '07',
+              icon: require('../../assets/imgs/service_process_7.png'),
+              title: '客户验收',
+              desc: '描述'
+            },
+            {
+              num: '08',
+              icon: require('../../assets/imgs/service_process_8.png'),
+              title: '后期维护',
+              desc: '描述'
+            }
+          ],
+          rightList: ''
+        },
+        guaranteeData: [
+          {
+            en_title: 'Transaction security',
+            cn_title: '交易保障',
+            num: '01',
+            icon: require('../../assets/imgs/guarantee_1.png')
+          },
+          {
+            en_title: 'Professional security',
+            cn_title: '专业保障',
+            num: '02',
+            icon: require('../../assets/imgs/guarantee_2.png')
+          },
+          {
+            en_title: 'Experience in security',
+            cn_title: '经验保障',
+            num: '03',
+            icon: require('../../assets/imgs/guarantee_3.png')
+          },
+          {
+            en_title: 'service assurance',
+            cn_title: '服务保障',
+            num: '04',
+            icon: require('../../assets/imgs/guarantee_4.png')
+          }
+        ]
       }
     },
     components: {
       Increment,
       Subtitle
+    },
+    methods: {
+      mouseenterHandler(i) {
+        this.serviceProcessData.rightList = this.serviceProcessData.leftList[i].title
+      }
     }
   }
 </script>
@@ -187,6 +303,134 @@
         width: 100%;
         height: auto;
         vertical-align: bottom;
+      }
+    }
+
+    .service-process-title {
+      background-color: $color_f5f5f5;
+    }
+
+    .service-process {
+      width: 100%;
+      background-color: $color_f5f5f5;
+      padding-bottom: 100px;
+
+      .service-process-wrap {
+        height: 439px;
+        justify-content: space-between;
+
+        .service-process-wrap-left {
+          flex: 1;
+          margin-right: 1px;
+
+          ul {
+            flex-wrap: wrap;
+
+            li {
+              width: 25%;
+              height: 218px;
+              box-sizing: border-box;
+              border: 1px solid transparent;
+              cursor: pointer;
+              flex-direction: column;
+              align-content: center;
+              align-items: center;
+              justify-content: space-around;
+
+              &:hover {
+                border: 1px solid $color_0A84FF;
+              }
+
+              img {
+                width: 90px;
+                height: 90px;
+              }
+
+              .num {
+                font-size: $font_size_64;
+                color: $color_DBDBDB;
+                height: 42px;
+                overflow-y: hidden;
+              }
+
+              .title {
+                font-size: $font_size_22;
+                color: $color_333333;
+              }
+            }
+          }
+        }
+
+        .service-process-wrap-right {
+          width: 324px;
+          background-color: $color_0A84FF;
+        }
+      }
+    }
+
+    .guarantee {
+      .guarantee-wrap {
+        height: 454px;
+
+        .guarantee-wrap-item {
+          width: 300px;
+          overflow: hidden;
+
+          &:nth-child(odd) {
+            background-color: $color_f5f5f5;
+          }
+
+          p {
+            text-align: center;
+
+            &:nth-child(1) {
+              font-size: $font_size_20;
+              color: $color_999999;
+              margin-top: 60px;
+            }
+
+            &:nth-child(2) {
+              font-size: $font_size_22;
+              color: $color_333333;
+              margin-top: 30px;
+              position: relative;
+
+              &::before, &::after {
+                content: '';
+                display: block;
+                width: 40px;
+                height: 1px;
+                background-color: $color_c5c5c5;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+              }
+
+              &::before {
+                top: -10px;
+              }
+
+              &::after {
+                bottom: -10px;
+              }
+            }
+
+            &:nth-child(3) {
+              font-size: $font_size_56;
+              color: $color_999999;
+              margin-top: 70px;
+            }
+
+            &:nth-child(4) {
+              margin-top: 50px;
+
+              img {
+                width: 100px;
+                height: 100px;
+              }
+            }
+          }
+        }
       }
     }
   }

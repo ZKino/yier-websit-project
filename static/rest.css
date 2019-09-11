@@ -66,6 +66,10 @@ a {
   width: 1440px;
   margin: 0 auto;
 }
+.w1200 {
+  width: 1200px;
+  margin: 0 auto;
+}
 
 .flex {
   display: -moz-flex;
