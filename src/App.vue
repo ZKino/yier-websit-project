@@ -11,16 +11,21 @@
       </keep-alive>
     </transition>
 
+    <!--    footer-->
+    <Footer />
+
   </div>
 </template>
 
 <script>
   import Navigation from './components/navigation'
+  import Footer from "./components/footer/Footer";
 
   export default {
     name: 'App',
     components: {
-      Navigation
+      Navigation,
+      Footer
     }
   }
 </script>

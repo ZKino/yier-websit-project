@@ -81,7 +81,13 @@
 
     <!--    地图下面的联系信息区域-->
     <div class="contact-info">
-
+      <div class="contact-info-wrap flex w1200">
+        <div class="contact-info-item" v-for="(v, i) in contactInfoData" :key="v.title">
+          <img :src="v.icon" alt="">
+          <p>{{ v.title }}</p>
+          <p>{{ v.sub_title }}</p>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -107,6 +113,28 @@
           bg_img: require('../../assets/imgs/contact_bg.png'),
           qrcode: require('../../assets/imgs/qrcode.png')
         },
+        contactInfoData: [
+          {
+            icon: require('../../assets/imgs/contact-info-1.png'),
+            title: '企业地址',
+            sub_title: '成都市郫都区蜀都万达4栋25楼'
+          },
+          {
+            icon: require('../../assets/imgs/contact-info-2.png'),
+            title: '咨询电话',
+            sub_title: '181-1312-7675'
+          },
+          {
+            icon: require('../../assets/imgs/contact-info-3.png'),
+            title: '企业QQ',
+            sub_title: '544256493'
+          },
+          {
+            icon: require('../../assets/imgs/contact-info-4.png'),
+            title: '企业邮箱',
+            sub_title: '544256493@qq.com'
+          }
+        ],
         center: {lng: 104.101207, lat: 30.655604},
         zoom: 15
       }
@@ -307,6 +335,33 @@
     margin-top: 60px;
     .map {
       height: 680px;
+    }
+  }
+  .contact-info {
+    margin-bottom: 80px;
+    .contact-info-wrap {
+      justify-content: space-between;
+      .contact-info-item {
+        text-align: center;
+        border: 1px solid #eeeeee;
+        padding: 50px;
+        box-sizing: border-box;
+        flex: 1;
+        img {
+          width: 94px;
+          height: 94px;
+        }
+        p:nth-child(2) {
+          color: #666666;
+          font-size: 18px;
+          margin-top: 32px;
+        }
+        p:nth-child(3) {
+          color: #666666;
+          font-size: 16px;
+          margin-top: 14px;
+        }
+      }
     }
   }
 </style>

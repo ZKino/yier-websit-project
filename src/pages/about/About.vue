@@ -369,6 +369,7 @@
     }
 
     .guarantee {
+      margin-bottom: 100px;
       .guarantee-wrap {
         height: 454px;
 
