@@ -1,6 +1,6 @@
 <template>
   <nav class="navigation">
-    <div class="navigation-inner flex w1440">
+    <div class="navigation-inner flex w1200">
       <h1>LOGO</h1>
       <ul class="flex">
         <li>

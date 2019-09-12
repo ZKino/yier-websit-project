@@ -8,7 +8,7 @@
 
     <!--    banner下面的描述-->
     <div class="des">
-      <div class="des-inner w1440">
+      <div class="des-inner w1200">
         <span>One-stop design and development service platform</span>
         <span>一站式设计开发服务平台</span>
       </div>
@@ -16,7 +16,7 @@
 
     <!--    关于我们介绍-->
     <div class="introduce">
-      <div class="introduce-inner w1440">
+      <div class="introduce-inner w1200">
         <div class="introduce-inner-item">
           专注于产品设计、开发服务 <br/> 解决方案
         </div>

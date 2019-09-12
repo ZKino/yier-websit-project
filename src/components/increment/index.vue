@@ -60,7 +60,7 @@
   @import "../../assets/css/pulic";
 
   .increment {
-    width: 1440px;
+    width: 1200px;
     height: 280px;
     box-sizing: border-box;
     padding: 40px;
