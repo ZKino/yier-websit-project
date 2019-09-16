@@ -29,7 +29,7 @@
 
 <style scoped lang="scss">
   .list {
-    width: 100% !important;
+    width: 380px!important;
 
     &:hover .list-bottom {
       background-color: #0A84FF;
