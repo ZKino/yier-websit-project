@@ -1,13 +1,17 @@
 <template>
+  <div class="home">
     <h1>Home</h1>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "Home"
-    }
+  export default {
+    name: "Home"
+  }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+  .home {
+    margin-top: 86px;
+  }
 </style>

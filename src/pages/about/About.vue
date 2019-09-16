@@ -69,7 +69,10 @@
             </li>
           </ul>
         </div>
-        <div class="service-process-wrap-right">{{ serviceProcessData.rightList }}</div>
+        <div class="service-process-wrap-right">
+          <h4>{{ serviceProcessData.rightList_title }}</h4>
+          <p v-for="(v, i) in serviceProcessData.rightList_arr" :key="i">{{ v }}</p>
+        </div>
       </div>
     </div>
 
@@ -84,6 +87,9 @@
           <p>{{ v.cn_title }}</p>
           <p>{{ v.num }}</p>
           <p><img :src="v.icon" alt=""></p>
+          <ul class="hover-text">
+            <li v-for="(value, index) in v.desc" :key="index">{{ value }}</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -99,6 +105,7 @@
     name: "About",
     data() {
       return {
+        bgc: '0',
         incrementData: {
           title: '忆尔实力展示',
           bg_color: 'transparent',
@@ -118,76 +125,82 @@
               num: '01',
               icon: require('../../assets/imgs/service_process_1.png'),
               title: '需求收集',
-              desc: '描述'
+              desc: ['竞争能力分析', 'SWOT分析', '可行性分析']
             },
             {
               num: '02',
               icon: require('../../assets/imgs/service_process_2.png'),
               title: '项目报价',
-              desc: '描述'
+              desc: ['成立方案工作小组', '需求分析', '功能分析', '内容规划', '方案策划', '费用预算']
             },
             {
               num: '03',
               icon: require('../../assets/imgs/service_process_3.png'),
               title: '项目立项',
-              desc: '描述'
+              desc: ['成立项目组', '项目启动', '项目调研', '项目WBS分解', '流程分析', '需求定义', '验收标准', '项目管理', '项目备案']
             },
             {
               num: '04',
               icon: require('../../assets/imgs/service_process_4.png'),
               title: '创意设计',
-              desc: '描述'
+              desc: ['创意规划', '页面设计', '创意设计', '设计确认']
             },
             {
               num: '05',
               icon: require('../../assets/imgs/service_process_5.png'),
               title: '程序开发',
-              desc: '描述'
+              desc: ['前端切图', '用户体验', '系统结构设计', '功能开发', '功能确认']
             },
             {
               num: '06',
               icon: require('../../assets/imgs/service_process_6.png'),
-              title: '客户审核'
+              title: '客户审核',
+              desc: ['后期维护', '操作手册', '运营维护', '升级规划', '未来发展研究']
             },
             {
               num: '07',
               icon: require('../../assets/imgs/service_process_7.png'),
               title: '客户验收',
-              desc: '描述'
+              desc: ['验收合格', '网站上线', '用户支持']
             },
             {
               num: '08',
               icon: require('../../assets/imgs/service_process_8.png'),
               title: '后期维护',
-              desc: '描述'
+              desc: ['后期维护', '操作手册', '运营维护', '升级规划', '未来发展研究']
             }
           ],
-          rightList: ''
+          rightList_title: '需求收集',
+          rightList_arr: ['竞争能力分析', 'SWOT分析', '可行性分析']
         },
         guaranteeData: [
           {
             en_title: 'Transaction security',
             cn_title: '交易保障',
             num: '01',
-            icon: require('../../assets/imgs/guarantee_1.png')
+            icon: require('../../assets/imgs/guarantee_1.png'),
+            desc: ['免费修改至满意为止', '项目版权全责承担', '售后长期保障']
           },
           {
             en_title: 'Professional security',
             cn_title: '专业保障',
             num: '02',
-            icon: require('../../assets/imgs/guarantee_2.png')
+            icon: require('../../assets/imgs/guarantee_2.png'),
+            desc: ['保障产品无第三方侵权', '多种设计风格选择', '拒接流水线作业', '实力原创保障', '团队出品模式']
           },
           {
             en_title: 'Experience in security',
             cn_title: '经验保障',
             num: '03',
-            icon: require('../../assets/imgs/guarantee_3.png')
+            icon: require('../../assets/imgs/guarantee_3.png'),
+            desc: ['累计服务超1000+', '设计、开发、影视、印刷经验', '产品涉及30多个行业', '30+知名客户', '18家新锐品牌']
           },
           {
             en_title: 'service assurance',
             cn_title: '服务保障',
             num: '04',
-            icon: require('../../assets/imgs/guarantee_4.png')
+            icon: require('../../assets/imgs/guarantee_4.png'),
+            desc: ['量身定产品', '高端服务标准', '一对一VIP服务', '知名总监团队', '前沿视觉设计、研发能力', '完善的项目管理体系']
           }
         ]
       }
@@ -198,7 +211,8 @@
     },
     methods: {
       mouseenterHandler(i) {
-        this.serviceProcessData.rightList = this.serviceProcessData.leftList[i].title
+        this.serviceProcessData.rightList_title = this.serviceProcessData.leftList[i].title
+        this.serviceProcessData.rightList_arr = this.serviceProcessData.leftList[i].desc
       }
     }
   }
@@ -206,8 +220,8 @@
 
 <style scoped lang="scss">
   @import "../../assets/css/pulic";
-
   .about {
+    margin-top: 86px;
     .des {
       width: 100%;
       padding: 20px 0 33px 0;
@@ -364,6 +378,31 @@
         .service-process-wrap-right {
           width: 324px;
           background-color: $color_0A84FF;
+          padding: 60px;
+          box-sizing: border-box;
+          h4 {
+            font-size:42px;
+            font-weight:400;
+            color:#ffffff;
+            margin-bottom: 30px;
+            position: relative;
+            &::after {
+              content: '';
+              display: block;
+              width: 83px;
+              height: 4px;
+              background-color: #ffffff;
+              position: absolute;
+              bottom: -10px;
+              left: 0;
+            }
+          }
+          p {
+            font-size:16px;
+            font-weight:300;
+            color:#ffffff;
+            line-height: 1.5;
+          }
         }
       }
     }
@@ -375,7 +414,27 @@
 
         .guarantee-wrap-item {
           width: 300px;
+          position: relative;
           overflow: hidden;
+
+          &:hover {
+            background-color: #0A84FF!important;
+          }
+          &:hover .hover-text {
+            display: block;
+          }
+          &:hover p:nth-child(1) {
+            color: #ffffff;
+          }
+          &:hover p:nth-child(2) {
+            color: #ffffff;
+          }
+          &:hover p:nth-child(3) {
+            display: none;
+          }
+          &:hover p:nth-child(4) {
+            display: none;
+          }
 
           &:nth-child(odd) {
             background-color: $color_f5f5f5;
@@ -429,6 +488,20 @@
                 width: 100px;
                 height: 100px;
               }
+            }
+          }
+          .hover-text {
+            width: 100%;
+            text-align: center;
+            line-height: 2;
+            position: absolute;
+            top: 190px;
+            left: 0;
+            box-sizing: border-box;
+            display: none;
+            li {
+              font-size:16px;
+              color:#ffffff;
             }
           }
         }

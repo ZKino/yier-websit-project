@@ -156,7 +156,9 @@
 
 <style scoped lang="scss">
   @import "../../assets/css/pulic";
-
+  .contact {
+    margin-top: 86px;
+  }
   .contact-form {
     background-color: $color_f5f5f5;
     padding: 60px 0 120px 0;

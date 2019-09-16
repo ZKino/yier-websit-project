@@ -29,7 +29,10 @@
     },
     methods: {
       navigationToDetail (id) {
-        alert('跳转到详情页面id是'+id)
+        window.open('/new/' + id, '_blank')
+        // this.$router.push({
+        //   path: '/new/' + id
+        // })
       }
     }
   }

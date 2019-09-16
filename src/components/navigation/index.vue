@@ -6,9 +6,9 @@
         <li>
           <router-link :to="{name: 'home'}">首页</router-link>
         </li>
-        <li>
-          <router-link :to="{name: 'service'}">产品服务</router-link>
-        </li>
+<!--        <li>-->
+<!--          <router-link :to="{name: 'service'}">产品服务</router-link>-->
+<!--        </li>-->
         <li>
           <router-link :to="{name: 'case'}">成功案例</router-link>
         </li>
@@ -18,9 +18,9 @@
         <li>
           <router-link :to="{name: 'about'}">关于我们</router-link>
         </li>
-        <li>
-          <router-link :to="{name: 'join'}">招贤纳士</router-link>
-        </li>
+<!--        <li>-->
+<!--          <router-link :to="{name: 'join'}">招贤纳士</router-link>-->
+<!--        </li>-->
         <li>
           <router-link :to="{name: 'contact'}">联系我们</router-link>
         </li>
@@ -43,6 +43,11 @@
     height: 86px;
     overflow: hidden;
     background-color: $color_ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
 
     .navigation-inner {
       height: 100%;

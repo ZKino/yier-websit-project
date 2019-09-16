@@ -18,7 +18,9 @@
             <router-link tag="li" :to="{name: 'industry'}">行业资讯</router-link>
             <router-link tag="li" :to="{name: 'development'}">开发学堂</router-link>
           </ul>
-          <div class="search"><input type="text" placeholder="输入搜索关键字"><img src="../../assets/imgs/search.png" alt="">
+          <div class="search">
+            <input type="text" placeholder="输入搜索关键字">
+            <img src="../../assets/imgs/search.png" alt="">
           </div>
         </div>
         <!--    路由窗口-->
@@ -40,11 +42,6 @@
       return {
         activeName: 'second'
       }
-    },
-    methods: {
-      handleClick(tab, event) {
-        console.log(tab, event);
-      }
     }
   }
 </script>
@@ -53,6 +50,7 @@
   @import "../../assets/css/pulic";
 
   .new {
+    margin-top: 86px;
 
     .new-tab {
 

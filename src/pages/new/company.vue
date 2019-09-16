@@ -4,15 +4,20 @@
       v-for="(v, i) in companyLists" :key="v.id">
       <List :listData="v"/>
     </div>
+
+    <!--    分页-->
+    <Pagination @currentChange="currentChange" />
   </div>
 </template>
 
 <script>
   import List from "./List";
+  import Pagination from "./Pagination";
   export default {
     name: "company",
     components: {
-      List
+      List,
+      Pagination
     },
     data () {
       return {
@@ -78,6 +83,11 @@
             sub_title: '做设计（包括规划景观），打造“某国风情园林”这样的设计思路是会首先被枪毙的。因为我们认为这样的打造是没有意义的。首先，我们的设计人员都没有到过“某国”；再者，如上文所说的，这样的风情园林并不是单靠一个楼盘项目的园林环境就能够支撑的。看中国2019设计需求策划标准'
           }
         ]
+      }
+    },
+    methods: {
+      currentChange () {
+        console.log('翻页')
       }
     }
   }
