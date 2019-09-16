@@ -59,13 +59,14 @@ body {
 }
 
 a {
-  text-decoration:  none;
+  text-decoration: none;
 }
 
 .w1440 {
   width: 1440px;
   margin: 0 auto;
 }
+
 .w1200 {
   width: 1200px;
   margin: 0 auto;
@@ -78,4 +79,16 @@ a {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+.clearfix {
+  *zoom: 1; /* IE/7/6*/
 }

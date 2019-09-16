@@ -93,15 +93,12 @@
 @import '../../assets/css/pulic';
   .design {
     .design-wrap {
-      flex-wrap: wrap;
       justify-content: flex-start;
+      flex-wrap: wrap;
       div {
         width: 20%;
         border: 1px solid transparent;
         box-sizing: border-box;
-        /*&:last-child {*/
-        /*  margin-right: 0;*/
-        /*}*/
       }
     }
   }
