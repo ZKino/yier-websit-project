@@ -2,7 +2,9 @@
   <div class="list">
     <div class="list-top">
       <img :src="listData.img_url" alt="">
-      <div class="mask">-{{ listData.slogan }}-</div>
+      <div class="mask">
+        <span>-{{ listData.slogan }}-</span>
+      </div>
     </div>
     <div class="list-bottom">{{ listData.title }}</div>
   </div>
@@ -51,17 +53,21 @@
       .mask {
         width: 100%;
         height: 100%;
-        line-height: 333px;
-        text-align: center;
-        font-size: 18px;
         background-color: rgba(0, 0, 0, 0.52);
-        color: #ffffff;
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         display: none;
+        span {
+          color: #ffffff;
+          font-size: 18px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
       }
     }
 
