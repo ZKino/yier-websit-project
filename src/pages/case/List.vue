@@ -29,20 +29,18 @@
 
 <style scoped lang="scss">
   .list {
-    width: 380px;
-    height: 381px;
+    width: 100% !important;
 
     &:hover .list-bottom {
       background-color: #0A84FF;
       color: #ffffff;
     }
+
     &:hover .list-top .mask {
       display: block;
     }
 
     .list-top {
-      width: 380px;
-      height: 333px;
       position: relative;
 
       img {
@@ -69,8 +67,6 @@
     }
 
     .list-bottom {
-      width: 380px;
-      height: 48px;
       line-height: 48px;
       font-size: 14px;
       color: #333333;

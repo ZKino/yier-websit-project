@@ -94,7 +94,15 @@
   .design {
     .design-wrap {
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: flex-start;
+      div {
+        width: 20%;
+        border: 1px solid transparent;
+        box-sizing: border-box;
+        /*&:last-child {*/
+        /*  margin-right: 0;*/
+        /*}*/
+      }
     }
   }
 </style>
