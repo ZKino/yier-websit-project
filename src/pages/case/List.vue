@@ -1,5 +1,5 @@
 <template>
-  <div class="list">
+  <div class="list" @click="navigationToDetail(listData.id)">
     <div class="list-top">
       <img :src="listData.img_url" alt="">
       <div class="mask">
@@ -25,12 +25,18 @@
           }
         }
       }
+    },
+    methods: {
+      navigationToDetail (id) {
+        window.open('/case/' + id, '_blank')
+      }
     }
   }
 </script>
 
 <style scoped lang="scss">
   .list {
+    cursor: pointer;
     width: 100%!important;
     &:hover .list-bottom {
       background-color: #0A84FF;

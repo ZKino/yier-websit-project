@@ -13,7 +13,7 @@
           <span>successful case</span>
         </h4>
         <ul class="flex">
-          <router-link tag="li" :to="{name: 'design'}">平面设计</router-link>
+          <router-link tag="li" :to="{name: 'designs'}">平面设计</router-link>
           <router-link tag="li" :to="{name: 'ui'}">UI设计</router-link>
           <router-link tag="li" :to="{name: 'program'}">程序开发</router-link>
           <router-link tag="li" :to="{name: 'tv'}">影视制作</router-link>
@@ -68,6 +68,7 @@
             padding-right: 20px;
             font-size: 18px;
             color: #333333;
+            cursor: pointer;
           }
           li:last-child {
             padding-right: 0;
