@@ -73,6 +73,9 @@
 <style scoped lang="scss">
   .footer {
     background-color: #3E3D49;
+    width: 100%;
+    position: absolute;
+    z-index: 9999;
     padding-top: 50px;
 
     .footer-content {
