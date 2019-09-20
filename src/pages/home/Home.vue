@@ -388,6 +388,11 @@
       .el-carousel__indicators {
         margin-bottom: 35px;
       }
+      .el-carousel__item {
+        img {
+          width: 100%;
+        }
+      }
     }
   }
 </style>
